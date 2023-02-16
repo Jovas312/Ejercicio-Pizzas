@@ -1,0 +1,173 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	height: 100vh;
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+
+	/*
+	display: flex;
+	gap: 20px;	
+	*/
+
+	display: grid;
+	grid-template-columns: repeat(4, 3fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "pizza pizza pizza banner"
+						"pizza pizza pizza banner"
+						"pizza pizza pizza banner"
+						"pizza pizza pizza banner";
+	gap: 20px;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+.contenedor  .titulo {
+	font-size: 24px;
+	padding: 20px 0;
+
+}
+
+.contenedor  .contenedor-pizzas {
+	/* width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px; */
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	grid-area: pizza;
+
+}
+
+.contenedor  .card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	/* width: 33.33%;
+	width: calc(33.33% - 20px); */
+
+}
+
+.contenedor .card .textos {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	/* display: grid;
+	grid-template-rows: 1fr auto; */
+}
+
+.contenedor  .banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+
+	/* width: 30%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	justify-self: stretch;
+	align-self: stretch;
+	grid-area: banner;
+
+	/* display: grid;
+	grid-template-rows: auto auto auto;
+	align-items: center; */
+}
+
+.contenedor  .banner ul {
+	list-style: none;
+}
+
+.contenedor  .banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.contenedor  .banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+	.contenedor{
+		height: 100%;
+		grid-template-areas: "pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"banner banner banner banner";
+	}
+
+	.contenedor  .contenedor-pizzas {
+		grid-template-columns: repeat(3, 1fr);
+		grid-area: pizza;
+	
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+	.contenedor{
+		height: 100%;
+		grid-template-areas: "pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"banner banner banner banner";
+	}
+
+	.contenedor  .contenedor-pizzas {
+		grid-template-columns: repeat(2, 1fr);
+		grid-area: pizza;
+	
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contenedor{
+		height: 100%;
+		grid-template-areas: "pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"pizza pizza pizza pizza"
+							"banner banner banner banner";
+	}
+
+	.contenedor  .contenedor-pizzas {
+		grid-template-columns: repeat(2, 1fr);
+		grid-area: pizza;
+	
+	}
+
+}	
